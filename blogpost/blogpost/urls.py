@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from BlogpostApp.views import posts
+from BlogpostApp.views import addpost
+from BlogpostApp.views import profile
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('posts/',posts,name="post"),
+    path('app/post/',addpost,name='addpost'),
+    path('profile/',profile,name='custom_user'),
 ]
